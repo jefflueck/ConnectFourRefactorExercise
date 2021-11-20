@@ -18,5 +18,9 @@
 ## Vetting of code at completion:
 * Live Review to be conducted by industry professional at finish of project.
 
-## Required goals for this project
-[http://curric.rithmschool.com/springboard/exercises/connect-four-oo/]
+## Required goals for this project:
+1. Make *Game* into a class
+2. Small improvments
+  * Create a button for starting the game & also restarts a new game.
+  * Add a property for when the game is over, and make it so that you can't continue to make moves after the game has ended.
+3. Make *Player* a class
