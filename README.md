@@ -1,7 +1,7 @@
 # ConnectFourRefactorExercise
 ***
 **Class of October 2021**
-## Worked on by Springboard studentn team:
+## Worked on by Springboard student team:
 1. George Stemmann
 2. Stephanie M
 3. Jeff L
