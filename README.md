@@ -1,4 +1,4 @@
-# ConnectFourRefactorExercise
+# Connect Four Refactor Exercise
 ***
 **Class of October 2021**
 ## Worked on by Springboard student team:
