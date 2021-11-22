@@ -13,6 +13,10 @@
   width: 80%;
   height: 80%;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .piece.p1 {
@@ -31,4 +35,23 @@
 
 #column-top td:hover {
   background-color: gold;
+}
+
+#form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#player_1,
+#player_2 {
+  margin: 10px 0px;
+}
+
+#button_for_player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }

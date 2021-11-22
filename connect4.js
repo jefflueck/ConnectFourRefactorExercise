@@ -14,16 +14,20 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
 /** makeBoard: create in-JS board structure:
  *   board = array of rows, each row is array of cells  (board[y][x])
  */
+// make class game
+class Game () {
+  constructor(HEIGHT, WIDTH, board)
+  this.HEIGHT = HEIGHT;
+  this.WIDTH = WIDTH;
+  this.board = [];
 
-function makeBoard() {
-  for (let y = 0; y < HEIGHT; y++) {
-    board.push(Array.from({ length: WIDTH }));
-  }
-}
+makeBoard() {
+      for (let y = 0; y < HEIGHT; y++) {
+        board.push(Array.from({ length: WIDTH }));
 
-/** makeHtmlBoard: make HTML table and row of column tops. */
+  /** makeHtmlBoard: make HTML table and row of column tops. */
 
-function makeHtmlBoard() {
+makeHtmlBoard() {
   const board = document.getElementById('board');
 
   // make column tops (clickable area for adding a piece to that column)
@@ -52,10 +56,9 @@ function makeHtmlBoard() {
     board.append(row);
   }
 }
-
 /** findSpotForCol: given column x, return top empty y (null if filled) */
 
-function findSpotForCol(x) {
+findSpotForCol(x) {
   for (let y = HEIGHT - 1; y >= 0; y--) {
     if (!board[y][x]) {
       return y;
@@ -64,10 +67,10 @@ function findSpotForCol(x) {
   return null;
 }
 
-/** placeInTable: update DOM to place piece into HTML table of board */
 
-function placeInTable(y, x) {
-  const piece = document.createElement('div');
+placeIntTable(y,x) {
+   /** placeInTable: update DOM to place piece into HTML table of board */
+   const piece = document.createElement('div');
   piece.classList.add('piece');
   piece.classList.add(`p${currPlayer}`);
   piece.style.top = -50 * (y + 2);
@@ -75,16 +78,8 @@ function placeInTable(y, x) {
   const spot = document.getElementById(`${y}-${x}`);
   spot.append(piece);
 }
-
-/** endGame: announce game end */
-
-function endGame(msg) {
-  alert(msg);
-}
-
 /** handleClick: handle click of column top to play piece */
-
-function handleClick(evt) {
+handleClick(evt) {
   // get x from ID of clicked cell
   const x = +evt.target.id;
 
@@ -97,19 +92,23 @@ function handleClick(evt) {
   // place piece in board and add to HTML table
   board[y][x] = currPlayer;
   placeInTable(y, x);
-  
+
   // check for win
   if (checkForWin()) {
     return endGame(`Player ${currPlayer} won!`);
   }
-  
+
   // check for tie
   if (board.every(row => row.every(cell => cell))) {
     return endGame('Tie!');
   }
-    
+
   // switch players
   currPlayer = currPlayer === 1 ? 2 : 1;
+}
+/** endGame: announce game end */
+endGame(msg) {
+  alert(msg);
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
@@ -146,6 +145,26 @@ function checkForWin() {
     }
   }
 }
+
+
+
+  }
+}
+}
+}
+}
+}
+
+// Jeff Lueck work on this code.
+class Player {
+  constructor(string) {
+    let p1Val = document.querySelector('#player_1');
+    let p2Val = document.querySelector('#player_2');
+  }
+}
+
+
+
 
 makeBoard();
 makeHtmlBoard();
