@@ -15,11 +15,15 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
  */
 // make class game
 class Game () {
-  constructor(HEIGHT, WIDTH, board)
-  this.HEIGHT = HEIGHT;
-  this.WIDTH = WIDTH;
-  this.board = [];
-  this.currPlayer = currPlayer;
+   constructor(p1, p2, height = 6, width = 7) {
+    this.players = [p1, p2];
+    this.height = height;
+    this.width = width;
+    this.currPlayer = p1;
+    this.makeBoard();
+    this.makeHtmlBoard();
+    this.gameOver = false;
+  }
 
 makeBoard() {
       for (let y = 0; y < HEIGHT; y++) {
