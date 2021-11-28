@@ -49,7 +49,7 @@
   margin: 10px 0px;
 }
 
-#button_for_player {
+button {
   display: flex;
   align-items: center;
   justify-content: center;

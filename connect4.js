@@ -16,7 +16,7 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
 // make class game
 //everything in the constructor gets called immediately
 //
-class Game () {
+class Game {
    constructor(p1, p2, height = 6, width = 7) {
     this.players = [p1, p2];
     this.height = height;
@@ -28,6 +28,7 @@ class Game () {
     //becasue we just started.
     this.gameOver = false;
   }
+}
 
 makeBoard() {
       for (let y = 0; y < this.height; y++) {
@@ -46,13 +47,14 @@ makeHtmlBoard() {
           //end game is in endGame function
           this.handleGameClick = this.handleClick.bind(this);
           top.addEventListener('click', this.handleGameClick);
-  //no change. just a loop and creating table 
+  //no change. just a loop and creating table
   // dataand give it an id and append it
   for (let x = 0; x < this.width; x++) {
     const headCell = document.createElement('td');
     headCell.setAttribute('id', x);
     top.append(headCell);
   }
+}
 
   board.append(top);
 
@@ -80,13 +82,12 @@ findSpotForCol(x) {
   return null;
 }
 
-
 placeIntTable(y,x) {
    /** placeInTable: update DOM to place piece into HTML table of board */
    const piece = document.createElement('div');
           piece.classList.add('piece');
-          //refactor to use currplayer for 
-          //which piece needs to be used after the 
+          //refactor to use currplayer for
+          //which piece needs to be used after the
           //color has been chosen
   piece.style.backgroundColor = this.currPlayer.color
   // piece.classList.add(`p${currPlayer}`);
@@ -129,14 +130,12 @@ handleClick(evt) {
     return this.endGame(`Player ${this.currPlayer.color} won!`);
   }
 
-  
   // switch players
           //need to add this with the new class player
           //using the index of the players from a new made array
  this.currPlayer = this.currPlayer === this.players[0] ? this.players[1] : this.players[0];
 
 }
-
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
 //this is a method using arrow functions
@@ -173,25 +172,22 @@ checkForWin() {
   }
 }
 
-
-
   }
-}
-}
-}
-}
 }
 
 // Jeff Lueck work on this code.
 class Player {
-  constructor(string) {
-    let p1Val = document.querySelector('#player_1');
-    let p2Val = document.querySelector('#player_2');
+  constructor(color) {
+    this.color = color;
+    console.log(color);
   }
 }
 
+document.querySelector('#start').addEventListener('click', () => {
+  let p1 = new Player(document.querySelector('#player_1').value);
+  let p2 = new Player(document.querySelector('#player_2').value);
+  new Game(p1, p2);
+});
 
-
-
-makeBoard();
-makeHtmlBoard();
+// makeBoard();
+// makeHtmlBoard();
