@@ -298,7 +298,7 @@ class Game {
 		// check for win
 		if (this.checkForWin()) {
 			this.gameOver = true;
-			return this.endGame(`The ${this.currPlayer.color} player won!`);
+			return this.endGame(`The ${this.currPlayer.color} fish has won the game!  Congrats!`);
 		}
 
 		// switch players
@@ -341,7 +341,7 @@ class Player {
 	}
 }
 
-document.getElementById('start-game').addEventListener('click', () => {
+document.getElementById('button').addEventListener('click', () => {
 	let p1 = new Player(document.getElementById('p1-color').value);
 	let p2 = new Player(document.getElementById('p2-color').value);
 	new Game(p1, p2);

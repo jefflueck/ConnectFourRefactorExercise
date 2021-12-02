@@ -5,15 +5,41 @@
   <link href="connect4.css" rel="stylesheet">
 </head>
 
-<body>
+<body> 
+  <div id="header">
+  <h1> Connect Four </h1>
+    <p> To begin, each player will select their favorite color and then press START GAME button! <br>
+      Player 1 and Player 2 alternate adding pieces. <br>
+      On each turn, click the top column where you would like a piece dropped down a column.<br> 
+      Once a player gets four-in-a-row (horiz, vert, or diag) they're the Winner! <br>
 
+      Unless you fill the board, then we have a tie and you must play again.  <br>
+
+    </p>
+
+  </div>
+  <div id="inputs">
   <input id="p1-color" placeholder="Player 1 color">
   <input id="p2-color" placeholder="Player 2 color">
-  <button id="start-game">Start Game!</button>
-
-  <div id="game">
+  <button id="button"> Start Game! </button>
+  </div>
+  <br>
+ 
+  
+  <div id="game"> 
+    <br>
+    <br>
     <table id="board"></table>
   </div>
+
+  <img src="fish.png" id="fishimage">
+  <img src="fish.png" id="fishimage2">
+  <img src="fish.png" id="fishimage3">
+  <img src="algae.png" id="fishimage4">
+  <img src="algae.png" id="fishimage5">
+  <img src="algae.png" id="fishimage6">
+  <img src="algae.png" id="fishimage7">
+
 
   <script src="connect4.js"></script>
 
